@@ -2,42 +2,41 @@
 
 /**
  * print_to_98 - prints all natural numbers from n to 98
- *
- * @n: The number to start printing
+ * @n: The number to start printing from
  *
  * Return: Always 0 (Success)
  */
-void print_to_98(int y)
+void print_to_98(int n)
 {
-	if (y <= 98)
+	if (n <= 98)
 	{
-		for (; y <= 98; y++)
+		for (; n <= 98; n++)
 		{
-			if (y == 98)
+			if (n == 98)
 			{
-				printf("%d", y);
+				printf("%d", n);
 				printf("\n");
 				break;
 			}
 			else
 			{
-				printf("%d, ", y);
+				printf("%d, ", n);
 			}
 		}
 	}
 	else
 	{
-		for (; y >= 98; y--)
+		for (; n >= 98; n--)
 		{
-			if (y == 98)
+			if (n == 98)
 			{
-				printf("%d", y);
+				printf("%d", n);
 				printf("\n");
 				break;
 			}
 			else
 			{
-				printf("%d, ", y);
+				printf("%d, ", n);
 			}
 		}
 	}
