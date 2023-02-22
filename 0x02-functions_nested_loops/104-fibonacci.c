@@ -12,10 +12,12 @@ int main(void)
 
 	printf("%d, %d, ", a, b);
 
-	while(count < 98) {
+	while (count < 98)
+       {
     c = a + b;
     printf("%d", c);
-    if(count != 97) {
+    if (count != 97)
+    {
         printf(", ");
     }
     a = b;
