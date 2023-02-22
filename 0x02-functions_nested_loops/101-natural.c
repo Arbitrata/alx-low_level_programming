@@ -1,9 +1,10 @@
 #include <stdio.h>
 
 /**
- * main - Entry point 
+ * Lists all the natural numbers below 1024 (excluded)
+ * multiples of 3 and 5 
  *
- * Return: Always  0 (success)
+ * Return: Always  0 (Success)
  *
  */
 int main () 
@@ -12,11 +13,11 @@ int main ()
 	int i;
 	for(i = 1; i < 1024; i++)
 	{
-		if(i % 3 == 0 || i % 5 == 0)
+		if((i % 3) == 0 || (i % 5) == 0)
 		{
-			sum = sum + i;
+			sum += i;
 		}
 	}
-	printf("%d\n",sum)
+	printf("%d\n", sum);
 	return (0);
 }
