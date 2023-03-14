@@ -1,43 +1,40 @@
 #include "main.h"
 #include <stdlib.h>
-#include <string.h>
-
 /**
- * argstostr - concatenates all the arguments of your program
- * @ac: number of arguments
- * @av: the arguments in the compiler
- *
- * Return: pointer to the concatenated string
+ * argstostr - main entry
+ * @ac: int input
+ * @av: double pointer array
+ * Return: 0
  */
 char *argstostr(int ac, char **av)
 {
-	int i, j, len;
-	char *ptr;
+	int i, n, r = 0, l = 0;
+	char *str;
 
-	if (ac == 0)
-		return (NULL);
-
-	if (av == NULL)
+	if (ac == 0 || av == NULL)
 		return (NULL);
 
 	for (i = 0; i < ac; i++)
 	{
-		for (j = 0; j < ac; j++)
-		{
-			len += av[i][j];
-		}
+		for (n = 0; av[i][n]; n++)
+			l++;
 	}
+	l += ac;
 
-	ptr = malloc((len + 1) * sizeof(char));
-
-	if (ptr == NULL)
+	str = malloc(sizeof(char) * l + 1);
+	if (str == NULL)
 		return (NULL);
-
 	for (i = 0; i < ac; i++)
 	{
-		strcat(ptr, av[i]);
-		strcat(ptr, "\n");
+	for (n = 0; av[i][n]; n++)
+	{
+		str[r] = av[i][n];
+		r++;
 	}
-
-	return (ptr);
+	if (str[r] == '\0')
+	{
+		str[r++] = '\n';
+	}
+	}
+	return (str);
 }
